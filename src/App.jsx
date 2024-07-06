@@ -18,9 +18,12 @@ function App() {
   });
   const totalFeedback =
     FeedbackList.good + FeedbackList.neutral + FeedbackList.bad;
+
   const positiveFeedback = Math.round(
     (FeedbackList.good / totalFeedback) * 100
   );
+  const calculatedPositive = totalFeedback > 0 ? `${positiveFeedback}%` : null;
+
   const OptionsVote = (option) => {
     setFeedbackList((prev) => ({ ...prev, [option]: prev[option] + 1 }));
   };
@@ -49,6 +52,7 @@ function App() {
           feedbackList={FeedbackList}
           totalFeedback={totalFeedback}
           positiveFeedback={positiveFeedback}
+          calculatedPositive={calculatedPositive}
         />
       )}
     </div>
