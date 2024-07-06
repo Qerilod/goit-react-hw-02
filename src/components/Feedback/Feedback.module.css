@@ -1,0 +1,20 @@
+.list {
+  list-style: none;
+  font-size: 32px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid black;
+  max-width: 200px;
+  margin-top: 30px;
+}
+
+.listGood {
+  color: chartreuse;
+}
+.listNeutral {
+  color: cadetblue;
+}
+.listBad {
+  color: crimson;
+}
