@@ -5,13 +5,4 @@ const Notification = ({ totalFeedback }) => {
   );
 };
 
-const PositiveFeedback = ({ positiveFeedback }) => {
-  return (
-    <p className={s.positive}>
-      Positive feedback percentage:{" "}
-      {isNaN(positiveFeedback) ? 0 : positiveFeedback}%
-    </p>
-  );
-};
 export default Notification;
-export { PositiveFeedback };

@@ -18,3 +18,11 @@
 .listBad {
   color: crimson;
 }
+
+.total {
+  color: blue;
+}
+
+.positive {
+  color: gold;
+}

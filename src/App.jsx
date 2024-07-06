@@ -3,7 +3,6 @@ import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import Feedback from "./components/Feedback/Feedback";
 import Notification from "./components/Notification/Notification";
-import { PositiveFeedback } from "./components/Notification/Notification";
 
 function App() {
   const [FeedbackList, setFeedbackList] = useState(() => {
@@ -45,8 +44,13 @@ function App() {
         totalFeedback={totalFeedback}
       />
       <Notification totalFeedback={totalFeedback} />
-      {totalFeedback > 0 && <Feedback feedbackList={FeedbackList} />}
-      <PositiveFeedback positiveFeedback={positiveFeedback} />{" "}
+      {totalFeedback > 0 && (
+        <Feedback
+          feedbackList={FeedbackList}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
+      )}
     </div>
   );
 }
