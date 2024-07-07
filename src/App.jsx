@@ -19,10 +19,10 @@ function App() {
   const totalFeedback =
     FeedbackList.good + FeedbackList.neutral + FeedbackList.bad;
 
-  const positiveFeedback = Math.round(
-    (FeedbackList.good / totalFeedback) * 100
-  );
-  const calculatedPositive = totalFeedback > 0 ? `${positiveFeedback}%` : null;
+  const positiveFeedback =
+    totalFeedback > 0
+      ? Math.round((FeedbackList.good / totalFeedback) * 100)
+      : 0;
 
   const OptionsVote = (option) => {
     setFeedbackList((prev) => ({ ...prev, [option]: prev[option] + 1 }));
@@ -46,13 +46,13 @@ function App() {
         onReset={resetFeedback}
         totalFeedback={totalFeedback}
       />
-      <Notification totalFeedback={totalFeedback} />
+
+      {totalFeedback === 0 && <Notification totalFeedback={totalFeedback} />}
       {totalFeedback > 0 && (
         <Feedback
           feedbackList={FeedbackList}
           totalFeedback={totalFeedback}
           positiveFeedback={positiveFeedback}
-          calculatedPositive={calculatedPositive}
         />
       )}
     </div>

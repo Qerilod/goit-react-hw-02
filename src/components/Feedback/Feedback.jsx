@@ -1,5 +1,5 @@
 import s from "./Feedback.module.css";
-const Feedback = ({ feedbackList, totalFeedback, calculatedPositive }) => {
+const Feedback = ({ feedbackList, totalFeedback, positiveFeedback }) => {
   return (
     <section>
       <ul className={s.list}>
@@ -7,7 +7,7 @@ const Feedback = ({ feedbackList, totalFeedback, calculatedPositive }) => {
         <li className={s.listNeutral}>neutral: {feedbackList.neutral}</li>
         <li className={s.listBad}>bad: {feedbackList.bad}</li>
         <li className={s.total}>total: {totalFeedback}</li>
-        <li className={s.positive}>positive: {calculatedPositive}</li>
+        <li className={s.positive}>positive: {positiveFeedback}%</li>
       </ul>
     </section>
   );
